@@ -1,0 +1,241 @@
+
+/************
+    Forside
+*************/
+
+/* containere */
+/* Setter alle containere som skal dekke innholdet med 100% bredde 
+    og posisjonerer de absolutt. Da er de plassert i forhold til body som er nærmeste relative parent. Dette skaper responsivt bakgrunnsbilde og gjør det enklere å posisjonere resterende elementer 
+*/
+#homepage-content, #homepage-animations, #homepage-background {
+    height: 90vh;
+    position: absolute;
+    width: 100%;
+}
+/* Tar ut alle sections av normal flyt slik at de kan posisjoneres etter ønske og gjemmer overflow slik at animasjonene ikke beveger seg utenfor gitte rammer */ 
+#homepage-animations section  {
+    position: absolute;
+    overflow: hidden;
+}
+/* Dykker animasjon */
+/* Skal dekke hele skjermen */
+#diving-animation-container {
+    top: 0;
+    height: 90vh;
+    width: 100%;
+}
+.diving-animation-img {
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: 20%;
+    transform: rotate(50deg);
+    animation: diverSwimmingOblique 10s 1 linear alternate, diverSwimmingHorizontal 10s 10s 1 linear alternate;
+    z-index: 1;
+}
+
+/* Midtstilt knapp */
+#homepage-button-container {
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 30vh;
+    transform: translate(-50%, -50%);
+    background: rgba(1, 40, 63, .5);
+    z-index: 2;
+}
+.wave-btn { 
+    font-size: 3em;
+    color: rgb(179, 206, 216); 
+    text-decoration: none; 
+    padding: 5px 30px; 
+    font-family: "Noto Sans"; 
+    line-height: 52px; 
+    border-radius: 10px; 
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    top: 0; 
+    left: 0; 
+    overflow: hidden; 
+    text-align: center;
+    line-height: 30vh;
+    border: 1px solid rgb(179, 206, 216); 
+    transition: all 1s; 
+} 
+  
+.wave-btn:before { 
+    content: ""; 
+    position: absolute; 
+    width: 1520px; 
+    height: 1520px; 
+    border-radius: 40%; 
+    background-color: rgba(2, 82, 114, .8); 
+    top: 80%; 
+    left: 50%; 
+    transform: translate(-50%); 
+    animation: wave 8s infinite linear;
+    transition: all 2s ease; 
+} 
+.wave-btn:hover:before {
+    top: 50%;
+    background-color: rgba(2, 82, 114, .5); 
+    transition: top 4s ease;
+}
+.wave-btn:hover {
+    font-size: 4em;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
+    transition: all 4s ease;
+}
+
+/* Søppel pose animasjon */
+/* Denne skal "synke" fra topp til bunn. derfor setter jeg den til å dekke hele høyden til skjermen med height: 100vh og posisjonerer den ute til høyre */
+#garbage-bag-container {
+    height: 90vh;
+    right: 10%;
+    width: 30%;
+}
+.garbage-bag-img {
+    bottom: 100%;
+    width: 30%;
+    right: 30%;
+    position: absolute;
+    z-index: 1;
+    animation: sinkingHorizontal 20s 1 linear alternate, sinkingVertical 5s 2 linear;
+}
+/* Søppel i bunn av bildet */
+/* På bunn skal det være en haug med søppel, den skal dekke hele bredden */
+#bottom-garbage {
+    width: 100%;
+    bottom: 0;
+    z-index: 0;
+}
+.bottom-garbage-img {
+    width: 100%;
+    bottom: 0;
+}
+
+/* Bobler på forsiden, benytter samme stilsettinger som .bubble klassen! */
+.bubblex1 {
+    right: 91%;
+    top: -5%;
+}
+.bubblex2 {
+    right: 90%;
+    top: -2%;
+}
+.bubblex3 {
+    right: 92%;
+    top: -7%;
+}
+.bubblex4 {
+    right: 50%;
+    top: -35%;
+}
+.bubblex5 {
+    right: 53%;
+    top: -22%;
+}
+.bubblex6 {
+    right: 51%;
+    top: -27%;
+}
+.bubblex7 {
+    right: 50%;
+    top: -25%;
+}
+.bubblex8 {
+    right: 33%;
+    top: -5%;
+}
+.bubblex9 {
+    right: 32%;
+    top: -15%;
+}
+.bubblex10 {
+    right: 31%;
+    top: -10%;
+}
+.bubble {
+    animation: horizontalBubble 20s linear infinite, verticalBubble 2s ease-in-out infinite alternate; 
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(ellipse at center,  rgba(114, 227, 242, .5) 0% ,rgba(114, 227, 242, 0) 70%);
+    box-shadow: inset 0 20px 30px rgba(114, 227, 242, 0.3);
+    height: 10px;
+    width: 10px;
+}
+
+/************************************************************************
+                        Animasjoner - keyframes  
+************************************************************************/
+/*******************
+        Forside 
+********************/
+/* Synkende søppelsekk */
+@keyframes sinkingHorizontal {
+    0% {
+        bottom: 100%;
+    }
+    50% {
+        bottom: 10%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+@keyframes sinkingVertical {
+    0% {
+        margin-right: 0%;
+    }
+    25% {
+        margin-right: 10%;
+    }
+    50% {
+        margin-right: 0%;
+    }
+    75% {
+        margin-right: -10%;
+    }
+    100% {
+        margin-right: 0%;
+    }
+}
+/* Dykker */
+@keyframes diverSwimmingOblique {
+    0% {
+        right: 100%;
+        bottom: 100%;
+        transform: rotate(50deg);
+    }
+    80% {
+        transform: rotate(50deg);
+    }
+    100% {
+        bottom: 5%;
+        right: 15%;
+        transform: rotate(-90deg);
+    }
+}
+@keyframes diverSwimmingHorizontal {
+    0% {
+        right: 15%;
+        bottom: 5%;
+        transform: rotate(-90deg);
+    }
+    100% {
+        right: 15%;
+        bottom: 100%;
+        transform: rotate(-90deg);
+    }
+}
+/* Bølgeanimasjon på midtstilt knapp */ 
+@keyframes wave { 
+  0% { 
+      transform: translate(-50%) rotate(-180deg);
+  } 
+  100% { 
+      transform: translate(-50%) rotate(360deg); 
+  } 
+} 

@@ -1,0 +1,230 @@
+/*    Globale stilsettinger  */
+/* Tilbakestiller alle default styles */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* bestemmer maks bredde og midtstiller */
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    background:  rgb(114, 227, 242);
+}
+
+/* Tekst  */
+h1, h2, h3, p {
+    color: rgb(1, 40, 63);
+}
+
+/*  Header */
+
+
+/* Bestemmer bredde og midtstiller til navigasjonsbar */
+
+header {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 10vh;
+	padding-bottom: 10px;
+	width: 100%;
+	background: rgb(114, 227, 242);
+}
+
+/* Logo til navigasjonsbaren */
+
+#logo {
+	position: absolute;
+	top: 0;
+	left: 300px;
+	height: 10vh;
+	width: 210px;
+}
+
+/* Dropdown menybar */
+
+ul#css3menu1,ul#css3menu1 ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	background-color:none;
+	border-width:0;
+	border-style:solid;
+}
+
+/* Dropdown menybar bredde/høyde  */
+
+ul#css3menu1 ul{
+	visibility:hidden;
+	position: absolute;
+	top: 150;
+	left:0;
+	opacity:0;
+	-moz-transition:all 0.5s;
+	-webkit-transition:opacity 0.5s,top 0.5s,left 0.5s;-o-transition:opacity 0.5s,top 0.5s,left 0.5s,visibility 0.5s;
+	transition:opacity 0.5s,top 0.5s,left 0.5s;
+	border-width:2px;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-style:none none none solid;
+	border-color:lightblue;
+	padding:0;
+}
+
+/* Dropdown menybar hover */
+
+ul#css3menu1 li:hover>ul{
+	visibility:visible;
+	opacity:1;
+}
+
+/* Dropdown menybar tekstil  */
+
+ul#css3menu1 li{
+	position:relative;
+	display:block;
+	white-space:nowrap;
+	font-size:0;
+	float:left;
+}
+
+
+/* Plassering på menybar boksene  */
+
+ul#css3menu1 ul ul{
+	position:absolute;
+	left: 200%;
+	top: 0;
+	-moz-box-shadow:#484848 0px 0px 1px;
+	-webkit-box-shadow:#484848 0px 0px 1px;
+	box-shadow:#484848 0px 0px 1px;
+}
+
+/* Menybar avstand fra topp til bunn  */
+
+ul#css3menu1>li:hover>ul{
+	top:100%;
+}
+
+/* Menybar avstand fra høyre eller venstre  */
+
+ul#css3menu1 ul li:hover>ul{
+	left:100%;
+}
+ul#css3menu1{
+	font-size:0;
+	z-index:999;
+	position:relative;
+	display:inline-block;
+	padding:0;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	display:inline;
+}
+* html ul#css3menu1 li a{
+	display:inline-block;
+}
+
+
+ul#css3menu1 a:active, ul#css3menu1 a:focus{
+	outline-style:none;
+}
+
+/* Dropdown menybar skriftsstørelse/skrift  */
+
+ul#css3menu1 a{
+	display:block;
+	vertical-align:middle;
+	text-align:center;
+	text-decoration:none;
+	font:20px Open Sans,Arial,sans-serif;
+	font-weight: bold;
+	letter-spacing: 2;
+	text-shadow: 2px 1px black;
+	color:#FFFFFF;
+	cursor:pointer;
+	width: 200px;
+	padding-bottom: 22px;
+	background-repeat:repeat;
+	border-width:0px;
+	border-style:none;
+	border-color:;
+    height: 10vh;
+    line-height: 10vh;
+}
+.topmenu-right {
+    margin-left: 400px;
+}
+ul#css3menu1 ul li{
+	float:none;
+	margin:0;
+}
+
+/* Farge på selve menybaren  */
+
+ul#css3menu1 ul a{
+	background-color: rgba(114, 227, 242, .6);
+    width: 200px;
+	border-width:0 0 1px 0;
+	border-style:solid;
+	border-color:lightblue;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	-moz-transition:all 0.5s;
+	-webkit-transition:all 0.5s;-o-transition:all 0.5s;
+	font:14px Open Sans,Arial,sans-serif;
+	color:#FFFFFF;
+	text-decoration:none;
+    line-height: 10vh;
+}
+ul#css3menu1 ul a:hover {
+	background-color: rgba(114, 227, 242, 1);
+}
+
+/* Bredde/høyde rundt menybaren  */
+
+ul#css3menu1 li.topmenu>a{
+	border-width:4px 0 0 0;
+	border-style:solid;
+	border-color:transparent transparent transparent transparent;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	-moz-transition:all 0.5s;
+	-webkit-transition:all 0.5s;-o-transition:all 0.5s;
+    background: rgba(114, 227, 242, .6);
+    width: 200px;
+}
+
+/* Farge rundt menybaren  */
+
+ul#css3menu1 li.topmenu:hover>a,ul#css3menu1 li.topmenu a.pressed{
+	background-color: rgba(114, 227, 242, 1);
+	border-style:solid;
+	width: 200px;
+	font-weight: bold;
+	border-color:#FFFFFF transparent transparent transparent;
+}
+
+/* media queries */
+@media only screen and (max-width: 1000px) {
+    .topmenu-right {
+        margin-left: 100px;
+    }
+    #logo {
+        left: 30%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .topmenu-right {
+        visibility: hidden;
+    }
+}

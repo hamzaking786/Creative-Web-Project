@@ -1,0 +1,587 @@
+/* Styling Body */
+body{
+font-family: sans-serif;
+background-color: #add8e6;
+}
+
+/* Fixed plassering for kortet */
+*{
+    margin: 0;
+    padding: 0; 
+
+}
+
+/*  Hoved class bestemt størrelser */
+.main-container {
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    bottom: 0;
+}
+.main-container section {
+    position: absolute;
+}
+
+/* Styling av overskriften */
+h2, h4
+{
+    font-family: cursive;
+}
+
+/* Styling av p-tagen */
+p
+{
+    font-family: monospace;
+    color: rgb(255, 255, 255);
+}
+
+#flip-card-container 
+{
+    height: 90vh;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Id inn i p-tagen for styling */
+#Word
+{
+    display: block;
+    color: rgb(255,0,0);
+}
+
+/* Styling for kortet */
+.trash{
+    background-color: rgb(255,0,0);
+}
+
+/* PLassering av kort */
+.center{
+    position: fixed;
+    top: 30%;
+    right: 30%;
+    transform: translate(-50%,-50%);
+}
+
+/* Flip card plassering */
+.flip-card {
+    margin-top: 10px;
+}
+
+/* Styling/effekter/posisjonering */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+/* Hoved effects/animasjon */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    z-index: 2;
+}
+
+/* Baksiden av kortet styling/effekter/posisjonering */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Forsiden av kortet */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Baksiden av kortet */
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    border: 1px solid red;
+}
+
+/* Hoved sky styling/posisjonering */
+.Cloud{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    background: #fff;
+    animation: move 8s linear infinite;
+}
+
+/* Sky (før) styling/posisjonering */
+.Cloud:before
+{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 45px;
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* Sky (etter) styling/posisjonering */
+.Cloud:after
+{
+    content: '';
+    position: absolute;
+    top: -75%;
+    right: 40px;
+    background: #fff;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* Sol styling/effekter/posisjonering */
+.Sun
+{
+    position: absolute;
+    top: -100px;
+    left: 50px;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    background: #ffe208;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255,255,8,5);
+    z-index: 1;
+    animation: animate 20s linear infinite;
+}
+
+/* (li) styling/posisjonering */
+.Sun li
+{
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 140px;
+    height: 3px;
+    background: #ffe208;
+    box-shadow: 0 0 15px rgba(255,255,8,.5);
+    border-radius: 50%;
+
+}
+
+/* Animasjon 8 sol-linjene  */
+.Sun li:nth-child(1)
+{
+    transform: translate(-50%,-50%)rotate(0deg);
+}
+
+.Sun li:nth-last-child(2)
+{
+    transform: translate(-50%,-50%)rotate(90deg);
+}
+
+.Sun li:nth-last-child(3)
+{
+    transform: translate(-50%,-50%)rotate(45deg);
+}
+
+.Sun li:nth-last-child(4)
+{
+    transform: translate(-50%,-50%)rotate(-45deg);
+}
+
+.Sun li:nth-last-child(5)
+{
+    transform: translate(-50%,-50%)rotate(22.5deg);
+}
+
+.Sun li:nth-last-child(6)
+{
+    transform: translate(-50%,-50%)rotate(-22.5deg);
+}
+
+.Sun li:nth-last-child(7)
+{
+    transform: translate(-50%,-50%)rotate(67.5deg);
+}
+
+.Sun li:nth-last-child(8)
+{
+    transform: translate(-50%,-50%)rotate(-67.5deg);
+}
+
+/* Animasjon på sola*/
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    50%
+    {
+        transform: rotate(180deg);
+    }
+    100%
+    {
+        transform: rotate(260deg);
+    }
+}
+
+/* Animasjon på sky-en */
+@keyframes move
+{
+    0%
+    {
+        transform: translate(0);
+    }
+    50%
+    {
+        transform: translate(50px);
+    }
+    100%
+    {
+        transform: translate(0);
+    }
+}
+
+/* Bølger */
+section
+{
+    // position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* Bilde styling/posisjonering */
+section .img {
+    position: fixed;
+    top: 100px;
+    margin-left: 20px;
+}
+
+/* Bakgrunn bilde for bølgene/styling/posisjonering */
+section .wave
+{
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(Images/wave_blue.png);
+    background-size: 1000px 100px;
+}
+
+/* 4 bølger animasjon/posisjonering på dem */
+section .wave.wave1
+{
+    animation: animate 30s linear infinite;
+    z-index: 100;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0px;
+}
+
+section .wave.wave2
+{
+    animation: animate2 15s linear infinite;
+    z-index: 99;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+section .wave.wave3
+{
+    animation: animate 30s linear infinite;
+    z-index: 98;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 10px;
+}
+
+section .wave.wave4
+{
+    animation: animate2 5s linear infinite;
+    z-index: 97;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 0px;
+} 
+
+/* Animasjon på bølger 1 */
+@keyframes animate
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 1000px; 
+    }
+}
+
+/*Vann bevegelser/animasjon for bølge 2*/
+@keyframes animate2
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: -1000px; 
+    }
+}
+
+/* Boat styling/effekter/animasjon/posisjonering */
+.boat
+{
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 300px;
+    z-index: 2;
+}
+
+/* Båt bilde*/
+.boat img
+{
+    bottom: 0;
+    width: 30%;
+    position: absolute;
+    animation: animateboat 15s linear infinite;
+
+}
+
+/* Animasjon på båt bevegelsen */
+@keyframes animateboat {
+    0% {
+        left: -20%;
+        bottom: 0;
+    }
+    25% {
+        bottom: 15%;
+    }
+    50% {
+        bottom: 10%;
+    }
+    75% {
+        bottom: 10%;
+    }
+
+    100% {
+        left: 100%;
+        bottom: 20%;
+    }
+}
+@keyframes animateboatUp {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: 8%;
+    }
+}
+
+/* Header */
+
+/* Bestemmer bredde og midtstiller til navigasjonsbar */
+
+header {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 10vh;
+	padding-bottom: 10px;
+	width: 100%;
+	background: rgb(114, 227, 242);
+}
+
+/* Logo til navigasjonsbaren */
+
+#logo {
+	position: absolute;
+	top: 3px;
+	left: 350px;
+	height: 61px;
+	width: 210px;
+}
+
+/* Dropdown menybar */
+
+ul#css3menu1,ul#css3menu1 ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+	background-color:none;
+	border-width:0;
+	border-style:solid;
+}
+
+/* Dropdown menybar bredde/høyde  */
+
+ul#css3menu1 ul{
+	visibility:hidden;
+	position: absolute;
+	top: 150;
+	left:0;
+	opacity:0;
+	-moz-transition:all 0.5s;
+	-webkit-transition:opacity 0.5s,top 0.5s,left 0.5s;-o-transition:opacity 0.5s,top 0.5s,left 0.5s,visibility 0.5s;
+	transition:opacity 0.5s,top 0.5s,left 0.5s;
+	border-width:2px;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-style:none none none solid;
+	border-color:lightblue;
+	padding:0;
+}
+
+/* Dropdown menybar hover */
+
+ul#css3menu1 li:hover>ul{
+	visibility:visible;
+	opacity:1;
+}
+
+/* Dropdown menybar tekstil  */
+
+ul#css3menu1 li{
+	position:relative;
+	display:block;
+	white-space:nowrap;
+	font-size:0;
+	float:left;
+}
+
+
+/* Plassering på menybar boksene  */
+
+ul#css3menu1 ul ul{
+	position:absolute;
+	left: 200%;
+	top: 0;
+	-moz-box-shadow:#484848 0px 0px 1px;
+	-webkit-box-shadow:#484848 0px 0px 1px;
+	box-shadow:#484848 0px 0px 1px;
+}
+
+/* Menybar avstand fra topp til bunn  */
+
+ul#css3menu1>li:hover>ul{
+	top:100%;
+}
+
+/* Menybar avstand fra høyre eller venstre  */
+
+ul#css3menu1 ul li:hover>ul{
+	left:100%;
+}
+ul#css3menu1{
+	font-size:0;
+	z-index:999;
+	position:relative;
+	display:inline-block;
+	padding:0;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	display:inline;
+}
+* html ul#css3menu1 li a{
+	display:inline-block;
+}
+
+
+ul#css3menu1 a:active, ul#css3menu1 a:focus{
+	outline-style:none;
+}
+
+/* Dropdown menybar skriftsstørelse/skrift  */
+
+ul#css3menu1 a{
+	display:block;
+	vertical-align:middle;
+	text-align:center;
+	text-decoration:none;
+	font:20px Open Sans,Arial,sans-serif;
+	font-weight: bold;
+	letter-spacing: 2;
+	text-shadow: 2px 1px black;
+	color:#FFFFFF;
+	cursor:pointer;
+	width: 200px;
+	padding: 18px 40px;
+	padding-bottom: 22px;
+	background-repeat:repeat;
+	border-width:0px;
+	border-style:none;
+	border-color:;
+}
+.topmenu-right {
+    margin-left: 300px;
+}
+ul#css3menu1 ul li{
+	float:none;
+	margin:0;
+}
+
+/* Farge på selve menybaren  */
+
+ul#css3menu1 ul a{
+	padding:11px 60px;
+	background-color: rgba(114, 227, 242, .6);
+    width: 200px;
+	border-width:0 0 1px 0;
+	border-style:solid;
+	border-color:lightblue;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	-moz-transition:all 0.5s;
+	-webkit-transition:all 0.5s;-o-transition:all 0.5s;
+	font:14px Open Sans,Arial,sans-serif;
+	color:#FFFFFF;
+	text-decoration:none;
+}
+ul#css3menu1 ul a:hover {
+	background-color: rgba(114, 227, 242, 1);
+}
+
+/* Bredde/høyde rundt menybaren  */
+
+ul#css3menu1 li.topmenu>a{
+	border-width:4px 0 0 0;
+	border-style:solid;
+	border-color:transparent transparent transparent transparent;
+	border-radius:0px;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	-moz-transition:all 0.5s;
+	-webkit-transition:all 0.5s;-o-transition:all 0.5s;
+    background: rgba(114, 227, 242, .6);
+    width: 200px;
+}
+
+/* Farge rundt menybaren  */
+
+ul#css3menu1 li.topmenu:hover>a,ul#css3menu1 li.topmenu a.pressed{
+	background-color: rgba(114, 227, 242, 1);
+	border-style:solid;
+	width: 200px;
+	font-weight: bold;
+	border-color:#FFFFFF transparent transparent transparent;
+}

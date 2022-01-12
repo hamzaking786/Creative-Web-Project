@@ -1,0 +1,477 @@
+/************************************************
+                    Side 2 
+*************************************************/
+/* hover peker effekt */
+#card-container:hover,
+#plastic-bag-container p:hover,
+#plastic-bag-container:hover,
+#turtle-container .turtle-animation:hover,
+#turtle-container .turtle-animation:hover,
+#poseidon-container:hover,
+#crab-container p a:hover,
+#crab-container:hover {
+    cursor: pointer;
+}
+
+
+/************************
+        Hoved innhold 
+*************************/
+#main-content, #page-2-animations, #page-2-background {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 90vh;
+}
+
+/* Tekst elementer */
+#card-container  { 
+    top: 10px; 
+    left: 45%; 
+    position: absolute; 
+    padding: 5px 10px; 
+    width: 50%; 
+    box-shadow: 1px 1px 2px rgb(1, 40, 63);
+    z-index: 1;
+}
+#card-container h1 {
+    margin-bottom: 10px; 
+    text-align: center;
+}
+#card-container p {
+    padding: 10px;
+}
+#card-container:hover {
+    box-shadow: 1px 1px 4px rgb(255, 255, 255);
+    transition: box-shadow 1.5s ease;
+}
+
+/* Plastikk pose animasjon og tekst */
+#plastic-bag-container {
+    position: absolute;
+    background: url(images/plastikk-pose-animasjon.png) no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 156px;
+    top: 40%;
+    left: 40%;
+    animation: floating 5s infinite ease-in-out;
+    padding: 10px;
+}
+#plastic-bag-container p {
+    width: 100%;
+    padding: 20px;
+    transform: rotate(180deg);
+    opacity: 0;
+}
+#plastic-bag-container p:hover {
+    opacity: 1;
+    transition: opacity 3s ease;
+}
+#plastic-bag-container:hover {
+    animation: rotateAndScale 5s 1 ease-in-out;
+    background: rgba(114, 227, 242, .5);
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px rgb(114, 227, 242);
+    transition: background 5s ease, box-shadow 5s ease;
+    transform: scale(2) rotate(180deg);
+}
+
+/* Animasjon containere og gloable stiler */
+#page-2-animations img {
+    position: absolute;
+}
+
+/***   Skilpadde   ***/
+#turtle-container {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    width: 20%;
+    height: 200px;
+}
+#turtle-container .turtle-animation:before, #turtle-container .turtle-animation:after {
+    position: absolute;
+    top: 100px;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: opacity 3s ease;
+    width: 100%;
+    height: 150px;
+    animation: floating 3s infinite ease-in-out; 
+    margin-left: 30px; 
+    margin-top: 5px; 
+    z-index: 1;
+}
+#turtle-container .turtle-animation:before {
+    background-image: url("images/trist-skilpadde.png");
+    opacity: 1;
+}
+#turtle-container .turtle-animation:after {
+    background-image: url("images/smilende-skilpadde.png");
+    opacity: 0;
+}
+#turtle-container .turtle-animation:hover:after {
+    opacity: 1;
+}
+#turtle-container .turtle-animation:hover:before {
+    opacity: 0;
+} 
+
+/* Poseidon animasjon */
+#poseidon-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+#poseidon-container img {
+    width: 20%;
+}
+#poseidon-container .poseidon-forward, #poseidon-container .poseidon-backward {
+    z-index: 1;
+    bottom: 0;
+    position: absolute;
+}
+#poseidon-container .poseidon-backward {
+    animation: poseidonBackward 20s linear infinite;
+}
+#poseidon-container .poseidon-forward {
+    animation: poseidonForward 20s linear infinite;
+}
+
+/* Snakke boble */
+#poseidon-container:hover:before {
+    content: "Ikke forstyrr.. Redder havet!";
+    position: absolute;
+    width: 20%;
+    height: 70px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(114, 227, 242, .5);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 70px; 
+}
+
+/*  Plastikk flaske søppel  */
+#garbage-container {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+#garbage-container .plastic-bottle-animation {
+    width: 10%;
+    bottom: 0;
+    left: 50%;
+    animation: dissapearingBottle 10s 1 linear alternate;
+    opacity: 0;
+}
+
+/* Krabbe seksjon med tekstboks ved hover */
+#crab-container {
+    width: 20%;
+    height: 300px;
+    position: absolute;
+    bottom: 50px;
+    left: 20%; 
+    padding: 5px 10px;
+    color: rgb(179, 206, 216);
+    background: rgba(114, 227, 242, .1);
+    box-shadow: 2px rgb(179, 206, 216);
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; 
+}
+#crab-container h3 {
+    text-align: center;
+    font-size: 1.2em;
+}
+#crab-container p {
+    margin: 10px 5px;
+}
+#crab-container p a {
+    color: rgb(114, 227, 242);
+}
+#crab-container p a:hover {
+    text-decoration: none;
+}
+#crab-container:hover {
+    opacity: 1;
+}
+
+/* Animasjons boble effekt */
+#bubble-container {
+    top: 5%;
+    position: absolute;
+    bottom: 0;
+    top: 35%;
+    width: 100%;
+    overflow: hidden;
+}
+.bubble {
+    animation: horizontalBubble 20s linear infinite, verticalBubble 2s ease-in-out infinite alternate; 
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(ellipse at center,  rgba(114, 227, 242, .5) 0% ,rgba(114, 227, 242, 0) 70%);
+    box-shadow: inset 0 20px 30px rgba(114, 227, 242, 0.3);
+    height: 10px;
+    width: 10px;
+}
+.bubble-1 {
+    left: 5%;
+    top: 5%;
+    transform: scale(1)
+}
+.bubble-2 {
+    left: 6%;
+    top: 8%;
+    transform: scale(1.2);
+}
+.bubble-3 {
+    left: 4%;
+    top: 3%;
+    transform: scale(1.4);
+}
+.bubble-4 {
+    left: 5%;
+    top: 7%;
+    transform: scale(.8);
+}
+.bubble-5 {
+    left: 60%;
+    top: 12%;
+    transform: scale(.8);
+}
+.bubble-6 {
+    left: 59.5%;
+    top: 15%;
+    transform: scale(1);
+}
+.bubble-7 {
+    left: 59%;
+    top: 17%;
+    transform: scale(1.2);
+}
+.bubble-8 {
+    left: 59%;
+    top: 13%;
+    transform: scale(.8);
+}
+.bubble-9 {
+    left: 30%;
+    top: 0;
+    animation: animateBubble 10s linear infinite, verticalMovement 2s ease-in-out infinite alternate;
+    animation-delay: -6s;
+}
+.bubble-10 {
+    left: 30%;
+    top: 0;
+    animation: animateBubble 10s linear infinite, verticalMovement 2s ease-in-out infinite alternate;
+    animation-delay: -4s;
+}
+.bubble-11 {
+    left: 30%;
+    top: 0;
+    animation: animateBubble 10s linear infinite, verticalMovement 2s ease-in-out infinite alternate;
+    animation-delay: -2s;
+}
+.bubble-12 {
+    left: 30%;
+    top: 0;
+    animation: animateBubble 10s linear infinite, verticalMovement 2s ease-in-out infinite alternate; 
+}
+.bubble-13 {
+    left: 30%;
+    top: 0;
+    animation: animateBubble 10s linear infinite, verticalMovement 2s ease-in-out infinite alternate; 
+    animation-delay: -8s;
+}
+.bubble-14 {
+    left: 80.5%;
+    top: 14%;
+    transform: scale(.8);
+}
+.bubble-15 {
+    left: 80%;
+    top: 16%;
+    transform: scale(.6);
+}
+.bubble-16 {
+    left: 79.5%;
+    top: 14%;
+    transform: scale(.6);
+}
+
+/* svømmende fisk animation */
+#fish-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.fish-animation {
+    position: absolute;
+}
+.fish-1 {
+    animation: fishSwimmingLeft 15s linear infinite;
+}
+.fish-2 {
+    animation: fishSwimmingRight 15s linear infinite;
+}
+.small-fish-container {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+    z-index: 0;
+}
+.small-fish {
+    width: 5%;
+    animation: fishSwimmingLeft 25s linear infinite;
+}
+.small-fish:last-child {
+    top: 30px;
+}
+
+/************************************************************************
+                        Animasjoner - keyframes  
+************************************************************************/
+
+/* Boble animasjon - får boblene til å bevege seg fra bunn og opp og side til side */
+@keyframes horizontalBubble {
+    0% {
+        margin-top: 650px;
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+@keyframes verticalBubble {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 20px;
+    }
+}
+
+/* Poseidon animasjon - Får poseidon til å gå fra venstre til høyre */
+@keyframes poseidonForward {
+    0% {
+        left: -20%;
+    }
+    50% {
+        left: 100%;
+        opacity: 1;
+    }
+    51% {
+        left: 100%;
+        opacity: 0;
+    }
+    100% {
+        left: -20%;
+        opacity: 0;
+    }
+
+}
+
+/* Poseidon animasjon - Får poseidon til å gå fra høyre til venstre */
+@keyframes poseidonBackward {
+    0% {
+        left: -20%;
+        opacity: 0;
+    }
+    50% {
+        left: 100%;
+        opacity: 0;
+    }
+    51% {
+        left: 100%;
+        opacity: 1;
+    }
+    100% {
+        left: -20%;
+        opacity: 1;
+    }
+}
+
+/* Flaske animasjon - denne skal gå i tråd med poseidon og fjerne flasken midt i bildet 
+    når rettvendt poseidon går over, flasken returnerer etter endt animasjon */
+@keyframes dissapearingBottle {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Fisk svømmer fra side til side  */
+@keyframes fishSwimmingLeft {
+    0% {
+        right: -15%;
+        margin-top: 20px;
+    }
+    25% {
+        margin-top: 0px;
+    }
+    50% {
+        margin-top: 20px;
+    }
+    75% {
+        margin-top: 0px;
+    }
+    100% {
+        right: 100%;
+        margin-top: 20px;
+    }
+}
+@keyframes fishSwimmingRight {
+     0% {
+        left: -15%;
+        margin-top: 0px;
+    }
+    25% {
+        margin-top: 20px;
+    }
+    50% {
+        margin-top: 0px;
+    }
+    75% {
+        margin-top: 20px;
+    }
+    100% {
+        left: 100%;
+        margin-top: 0px;
+    }
+}
+
+/* Skilpadde animasjon */
+@keyframes floating {
+    0% { transform: translate(0,  0px); } 
+    50%  { transform: translate(0, 15px); } 
+    100%   { transform: translate(0, -0px); }  
+}
+
+/* Plastikk pose animasjon */
+/* Roterer plastikkposen og skalerer opp */
+@keyframes rotateAndScale {
+    0% {
+        transform: rotate(0deg);
+        background-color: rgba(114, 227, 242, .1);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(180deg) scale(2);
+    }
+}
+
